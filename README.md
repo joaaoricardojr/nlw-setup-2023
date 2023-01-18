@@ -1,1 +1,4 @@
-# nlw-setup-2023
+# NLW-SETUP-2023
+## NodeJs com Fastify
+## Prisma
+    É um ORM
