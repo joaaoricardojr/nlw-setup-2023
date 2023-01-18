@@ -1,11 +1,15 @@
 import Fastify from "fastify";
+import cors from '@fastify/cors';
 import { PrismaClient } from "@prisma/client";
 
 const app = Fastify()
 const prisma = new PrismaClient()  //conexão com o BD
 
+//Permite que aplicações frontend acessem dados no backend
+app.register(cors)
+
 app.get('/hello', async () => {
-    const habits = await prisma.habit.findMany({})
+    const habits = await prisma.habit.findMany()
 
     return habits
 })
