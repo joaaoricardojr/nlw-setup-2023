@@ -5,13 +5,7 @@ const app = Fastify()
 const prisma = new PrismaClient()  //conexão com o BD
 
 app.get('/hello', async () => {
-    const habits = await prisma.habit.findMany({
-        where: {
-            title: {
-                startsWith: 'estudar'
-            }
-        }
-    })
+    const habits = await prisma.habit.findMany({})
 
     return habits
 })
